@@ -26,7 +26,7 @@ echo "======================================"
 
 supervisor_conf=$(cat <<EOF
 [program:redis-$port]
-command = /usr/local/bin/redis-server /etc/redis.conf --port $port --dir $REDIS_DIR/$port --cluster-enabled yes
+command = /usr/local/bin/redis-server /etc/redis.conf --port $port --dir $REDIS_DIR/$port --cluster-enabled yes --bind 0.0.0.0
 autostart = true
 autorestart = true
 stdout_logfile = syslog
